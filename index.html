@@ -40,13 +40,8 @@
     h1{font-size:52px; margin:18px 0 10px; line-height:1.05;}
     .sub{font-size:20px; color:var(--muted); margin:0 auto; max-width:760px; line-height:1.5;}
 
-    .cta{
-      margin:28px auto 0;
-      display:flex;
-      justify-content:center;
-    }
+    .cta{ margin:28px auto 0; display:flex; justify-content:center; }
 
-    /* Contain Kit form so it looks native */
     .form-shell{
       width:100%;
       max-width:720px;
@@ -55,21 +50,14 @@
       border-radius:14px;
       background:rgba(255,255,255,0.03);
       box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+      text-align:left;
     }
 
-    /* Overwrite some Kit styles safely */
-    .form-shell .formkit-form{
-      box-shadow:none !important;
-      max-width:100% !important;
-    }
-    .form-shell .formkit-container{
-      padding:0 !important;
-      background:transparent !important;
-      box-shadow:none !important;
-    }
-    .form-shell .formkit-hero{
-      display:none !important; /* removes the big image/banner */
-    }
+    /* Make Kit form match your site */
+    .form-shell .formkit-form{ box-shadow:none !important; max-width:100% !important; }
+    .form-shell .formkit-container{ padding:0 !important; background:transparent !important; box-shadow:none !important; }
+    .form-shell .formkit-hero{ display:none !important; } /* removes the big image/banner */
+
     .form-shell input.formkit-input{
       border-radius:10px !important;
       border:1px solid var(--border) !important;
@@ -86,7 +74,7 @@
       color:var(--text) !important;
     }
     .form-shell .formkit-powered-by-convertkit-container{
-      display:none !important; /* optional: hides "Built with Kit" */
+      display:none !important; /* optional: hide "Built with Kit" */
     }
 
     .grid{
@@ -104,6 +92,7 @@
       border:1px solid var(--border);
       border-radius:14px;
       background:rgba(255,255,255,0.02);
+      text-align:left;
     }
     .card h2{margin:0 0 10px; font-size:20px;}
     .card p{margin:0; color:var(--muted); line-height:1.55;}
@@ -118,7 +107,6 @@
       text-align:center;
       font-size:13px;
     }
-    .footer a{color:#999; text-decoration:none}
   </style>
 </head>
 
@@ -131,20 +119,15 @@
 
       <div class="cta">
         <div class="form-shell">
-          <!-- Kit embed (keep your existing script + form) -->
+          <!-- ✅ REQUIRED: Kit JS -->
           <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
-          <!-- Paste ONLY the <form ...> ... </form> block below (you can keep your current one) -->
-          <form action="https://app.kit.com/forms/9117546/subscriptions"
-                class="seva-form formkit-form"
-                method="post"
-                data-sv-form="9117546"
-                data-uid="bfb8567a55"
-                data-format="inline"
-                data-version="5">
-            <!-- If your current Kit embed includes lots of inner HTML, keep it as-is.
-                 The styles above hide the banner + make it match your site. -->
-          </form>
+          <!-- ✅ REQUIRED: Paste your FULL Kit embed here (from the old working file)
+               Copy EVERYTHING starting at: <form action="https://app.kit.com/forms/9117546/subscriptions" ...
+               down through the closing: </form>
+          -->
+          <!-- PASTE YOUR FULL KIT EMBED HERE -->
+
         </div>
       </div>
 
@@ -156,6 +139,7 @@
         <h2>Stop guessing. Start measuring.</h2>
         <p>Most “health tracking” is scattered and subjective. CCC organizes your inputs and outcomes into a clear trendline — so you can see what’s working.</p>
       </div>
+
       <div class="card">
         <h2>What CCC will help you track</h2>
         <ul class="bullets">
@@ -166,13 +150,15 @@
           <li>Family mode profiles (same account)</li>
         </ul>
       </div>
+
       <div class="card">
         <h2>Who it’s for</h2>
-        <p>Carnivore / keto users, metabolic health improvers, performance-focused lifters, and anyone who wants structured, simple tracking without noise.</p>
+        <p>Carnivore / keto users, metabolic health improvers, performance-focused lifters, and anyone who wants structured tracking without noise.</p>
       </div>
+
       <div class="card">
         <h2>Early access promise</h2>
-        <p>Waitlist members get first invites, early pricing, and the ability to influence what we build first (dashboards, trends, and reporting).</p>
+        <p>Waitlist members get first invites, early pricing, and the ability to influence what we build first.</p>
       </div>
     </div>
 
@@ -187,10 +173,5 @@
       Carnivore Command Center™ is a product of WDC LLC.
     </div>
   </div>
-
-  <!-- IMPORTANT:
-       Your current Kit embed includes a lot of inner markup + <style> inside the form.
-       That’s okay; our CSS hides the hero banner and restyles inputs/buttons.
-       If your Kit form disappears after replacing, paste your full Kit form inner HTML back in. -->
 </body>
 </html>
