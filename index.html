@@ -177,11 +177,19 @@
       Carnivore Command Center™ is a product of WDC LLC.
     </div>
   </div>
-  <script>
-document.addEventListener("submit", function(e) {
-  if (e.target && e.target.action && e.target.action.includes("kit.com/forms")) {
-    plausible("Waitlist Signup");
-  }
+ <script>
+const observer = new MutationObserver(function(mutations) {
+  mutations.forEach(function(mutation) {
+    if (mutation.target.innerText &&
+        mutation.target.innerText.includes("Success! Now check your email")) {
+      plausible("Waitlist Signup");
+    }
+  });
+});
+
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
 });
 </script>
 </body>
